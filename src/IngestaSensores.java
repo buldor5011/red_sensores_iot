@@ -1,12 +1,3 @@
-/* ============================================================
-   PLATAFORMA DE MONITOREO AMBIENTAL URBANO
-   IngestaSensores - SEMANA 3
-
-   Este es el ÚNICO punto de entrada de todo el proyecto.
-
-   Las semanas no crean aplicaciones independientes:
-   cada semana agrega capacidades a esta misma plataforma.
-   ============================================================ */
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -30,25 +21,13 @@ public class IngestaSensores {
         imprimirResumenIngesta(repositorio);
         imprimirPerfilHorario(analizador);
 
-        // =====================================================
-        // SEMANA 3 - BÚSQUEDA Y ANÁLISIS DE EFICIENCIA
-        // =====================================================
-        //
-        // BancoDePruebas NO tiene main.
-        // Los experimentos son parte de esta misma aplicación.
-        //
+
         ejecutarExperimentosSemanaTres();
     }
 
-    /**
-     * Ejecuta las pruebas de la Semana 3 desde el único main
-     * del proyecto.
-     */
     private static void ejecutarExperimentosSemanaTres() {
         System.out.println();
-        System.out.println("====================================================");
         System.out.println("       SEMANA 3 - BUSQUEDA Y EFICIENCIA");
-        System.out.println("====================================================");
         System.out.println();
 
         BancoDePruebas.experimentoUno();
@@ -88,9 +67,7 @@ public class IngestaSensores {
         }
     }
 
-    /**
-     * Lee el archivo línea por línea y alimenta el repositorio y la matriz.
-     */
+
     private static void cargarArchivo(
             RepositorioLecturas repositorio,
             AnalizadorMatriz analizador) throws IOException {
@@ -127,11 +104,6 @@ public class IngestaSensores {
         }
     }
 
-    /**
-     * Convierte una línea del CSV en un objeto LecturaSensor.
-     *
-     * @return la lectura, o null si la línea está mal formada
-     */
     private static LecturaSensor construirLectura(String linea) {
 
         String[] campos = linea.split(",");
