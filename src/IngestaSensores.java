@@ -13,27 +13,27 @@ public class IngestaSensores {
 
     public static void main(String[] args) throws IOException {
 
-        RepositorioLecturas repositorio = new RepositorioLecturas();
-        AnalizadorMatriz analizador = new AnalizadorMatriz();
-
         cargarArchivo(repositorio, analizador);
 
         imprimirResumenIngesta(repositorio);
         imprimirPerfilHorario(analizador);
 
-
         ejecutarExperimentosSemanaTres();
+        ejecutarExperimentosSemanaCuatro();
     }
 
-    private static void ejecutarExperimentosSemanaTres() {
+    private static void ejecutarExperimentosSemanaCuatro() {
         System.out.println();
-        System.out.println("       SEMANA 3 - BUSQUEDA Y EFICIENCIA");
+        System.out.println("       SEMANA 4 - ORDENAMIENTO Y EFICIENCIA");
         System.out.println();
 
-        BancoDePruebas.experimentoUno();
-        BancoDePruebas.experimentoDos();
-        BancoDePruebas.experimentoTres();
-        BancoDePruebas.experimentoCuatro();
+        BancoDeOrdenamiento banco = new BancoDeOrdenamiento();
+
+        banco.experimentoUno();
+        banco.experimentoDos();
+        banco.experimentoTres();
+        banco.experimentoCuatro();
+        banco.experimentoCinco();
     }
 
     private static void imprimirResumenIngesta(
